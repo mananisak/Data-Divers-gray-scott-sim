@@ -4,7 +4,7 @@ Greetings Interns. This repo is for our very impressive software that performs a
 
 ## Getting Started
 
-This tutorial assumes a basic understanding of git, github and command line usage. If you do not have git installed please follow <a href="https://github.com/othneildrew/Best-README-Template">this tutorial</a>.
+This tutorial assumes a basic understanding of git, github and command line usage. If you do not have git installed please follow <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">this tutorial</a>.
 
 A C++ compiler (minimum C++11) is also required to compile and run this code.
 
