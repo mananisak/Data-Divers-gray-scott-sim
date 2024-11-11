@@ -24,12 +24,6 @@ A C++ compiler (minimum C++11) is also required to compile and run this code. In
    ```
 
 ### Using the software
-double Du = 0.14;                     // Diffusion rate of U
-double Dv = 0.07;                     // Diffusion rate of V
-double F = 0.03;                      // Feed rate
-double k = 0.0648;                    // Kill rate
-double threshold = 0.1;
-<Du> <Dv> <F> <k> <threshold>
 * Running the simulation
    ```sh
    make run
