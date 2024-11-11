@@ -22,6 +22,37 @@ A C++ compiler (minimum C++11) is also required to compile and run this code. In
    ```sh
    cd Data-Divers-gray-scott-sim
    ```
+
+### Using the software
+double Du = 0.14;                     // Diffusion rate of U
+double Dv = 0.07;                     // Diffusion rate of V
+double F = 0.03;                      // Feed rate
+double k = 0.0648;                    // Kill rate
+double threshold = 0.1;
+<Du> <Dv> <F> <k> <threshold>
+* Running the simulation
+   ```sh
+   make run
+   ```
+This will run the simulation with the default variables (Diffusion Rate of U (Du) = 0.14, Diffusion Rate of V (Dv) = 0.07, Feed Rate (F) = 0.03, Kill Rate (k) = 0.0648 and threshold = 0.1)
+
+* ADVANCED: Running the simulation with user-inputted parameters. Replace \<Du\> \<Dv\> \<F\> \<k\> \<threshold\> with the input for each variable.
+   ```sh
+   ./sim.out <Du> <Dv> <F> <k> <threshold>
+   ```
+* Running the simulation will output many vtk files into the build folder. To clear these use:
+   ```sh
+   make cleanvtk
+   ```
+* To clear all vtk files and output files:
+   ```sh
+   make clean
+   ```
+* To compile and run a test-version of the simulation:
+   ```sh
+   make test
+   ```
+
 ## Making Changes
 
 Push and pulling and description of our CI system.
