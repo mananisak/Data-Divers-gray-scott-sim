@@ -15,7 +15,7 @@ SRC = gs.cpp
 $(TARGET): $(SRC)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC)
 
-# Clean up build files
+# Clean up build files and vtk files
 .PHONY: clean
 clean:
 	rm -f $(TARGET)
@@ -26,5 +26,10 @@ clean:
 cleanvtk:
 	rm -f $(wildcard *.vtk)
 
-#Compile the test version of gs.cpp
-# test:
+#Compile and run the test version of gs.cpp
+test: $(SRC)
+	$(CXX) $(TESTFLAGs) -o $(TARGET) $(SRC)
+# 	./$(TARGET) --test
+
+run: $(SRC)
+	./$(TARGET)
