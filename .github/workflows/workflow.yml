@@ -1,0 +1,41 @@
+name: C++ Test Build System and CI
+
+on:
+  push:
+    branches:
+      - '*' 
+  pull_request:
+    branches:
+      - '*' 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  
+    
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y g++ cmake make  # Install required packages
+
+      - name: Setup Google Test
+        run: |
+          git clone https://github.com/google/googletest.git
+          mkdir -p googletest/build
+          cd googletest
+          cmake -S . -B build
+          cmake --build build
+          sudo cmake --install build  
+
+      - name: Configure and Build Project with CMake
+        run: |
+          cmake -S . -B build -DGTEST_ROOT=googletest 
+          cmake --build build 
+
+      - name: Run tests
+        run: |
+          cd build
+          ctest
