@@ -91,6 +91,6 @@ This will run the simulation with the default variables (Diffusion Rate of U (Du
    make test
    ```
 
-## Making Changes
+## CI workflow system
 
-Push and pulling and description of our CI system.
+The workflow.yml file is scripted based on the unit testing with Google Test compiled with CMake, it will be triggered by any code pushed to any branch, or when a pull request is updated. The whole workflow includes: check out code, dependencies installation, setup google test configuration and build and run tests and upload results.
