@@ -1,5 +1,5 @@
 name: C++ Test Build System and CI
-
+# Trigger action
 on:
   push:
     branches:
@@ -7,20 +7,20 @@ on:
   pull_request:
     branches:
       - '*' 
-
+# Specify latest version of ubuntu
 jobs:
   build:
     runs-on: ubuntu-latest  
-    
+    # Pull repository's code to GitHub
     steps:
       - name: Check out the code
         uses: actions/checkout@v4
-
+      # Install required packages
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y g++ cmake make  # Install required packages
-
+          sudo apt-get install -y g++ cmake make  
+      # Create build directory, configure and compile google test
       - name: Setup Google Test
         run: |
           git clone https://github.com/google/googletest.git
@@ -39,3 +39,13 @@ jobs:
         run: |
           cd build
           ctest
+          - name: Save test results
+          run: |
+            ctest > test_results.log
+          shell: bash
+  
+      - name: Output test results
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-result
+          path: build/test_results.log
