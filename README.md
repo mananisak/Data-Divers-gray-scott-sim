@@ -10,7 +10,7 @@ A C++ compiler (minimum C++11) is also required to compile and run this code. In
 
 Finally, Make and CMake are required to build the system. More info can be found <a href="https://cmake.org/download/">here</a>.
 
-### Installation
+### Cloning
 
 1. Clone the repo
    ```sh
@@ -21,8 +21,8 @@ Finally, Make and CMake are required to build the system. More info can be found
    cd Data-Divers-gray-scott-sim
    ```
 
-#### Using CMake to build the system for the software
-This is a more robust build system that requires CMake.
+### Using CMake to build the system for the software
+
 1. Create and enter the build directory
    ```sh
    mkdir build
