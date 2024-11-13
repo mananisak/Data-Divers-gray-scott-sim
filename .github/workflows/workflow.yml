@@ -39,13 +39,3 @@ jobs:
         run: |
           cd build
           ctest
-          - name: Save test results
-          run: |
-            ctest > test_results.log
-          shell: bash
-  
-      - name: Output test results
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-result
-          path: build/test_results.log
