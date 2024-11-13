@@ -21,7 +21,7 @@ Finally, Make and CMake are required to build the system. More info can be found
    cd Data-Divers-gray-scott-sim
    ```
 
-### Option 1: Using CMake to build the system for the software
+#### Using CMake to build the system for the software
 This is a more robust build system that requires CMake.
 1. Create and enter the build directory
    ```sh
