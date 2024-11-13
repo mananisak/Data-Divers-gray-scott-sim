@@ -18,14 +18,19 @@ TEST(MathematicalCorrectnessTest, ReactionTermCalculation) {
     double expected_du = diffusion_du + function_action_du;
     double expected_dv = diffusion_dv + function_action_dv;
 
+    u_test = std::vector<std::vector<double>>(test_w, std::vector<double>(test_h, 1.0));
+    v_test = std::vector<std::vector<double>>(test_w, std::vector<double>(test_h, 0.0));
+
     //set position use a,b at (1,1)
-    u[1][1] = a, v[1][1] = b;
+    u_test[1][1] = a, v_test[1][1] = b;
 
     //perform simulateStep()
     simulateStep();
+    
+
 
     //check whether the value in position(1,1) is near the value we calculate just before
     //tolerance=1e-5
-    EXPECT_NEAR(u[1][1], a + dt * expected_du, 1e-5);
-    EXPECT_NEAR(v[1][1], b + dt * expected_dv, 1e-5);
+    EXPECT_NEAR(u_test[1][1], a + dt * expected_du, 1e-5);
+    EXPECT_NEAR(v_test[1][1], b + dt * expected_dv, 1e-5);
 }

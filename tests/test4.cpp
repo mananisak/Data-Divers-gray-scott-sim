@@ -23,13 +23,16 @@ TEST(LongTermStabilityTest, CheckStabilityOverIterations) {
         simulateStep();
     }
 
+    u_test = std::vector<std::vector<double>>(test_w, std::vector<double>(test_h, 1.0));
+    v_test = std::vector<std::vector<double>>(test_w, std::vector<double>(test_h, 0.0));
+
     //check value
     for (int i = 0; i < width; ++i) {
         for (int j = 0; j < height; ++j) {
-            EXPECT_GE(u[i][j], min_value) << "u[" << i<< "][" << j << "] under minimum limitation";
-            EXPECT_LE(u[i][j], max_value) << "u[" << i << "][" << j << "] over maximum limitation";
-            EXPECT_GE(v[i][j], min_value) << "v[" << i << "][" << j << "] under minimum limitation";
-            EXPECT_LE(v[i][j], max_value) << "v[" << i << "][" << j << "] over maximum limitation";
+            EXPECT_GE(u_test[i][j], min_value) << "u[" << i<< "][" << j << "] under minimum limitation";
+            EXPECT_LE(u_test[i][j], max_value) << "u[" << i << "][" << j << "] over maximum limitation";
+            EXPECT_GE(v_test[i][j], min_value) << "v[" << i << "][" << j << "] under minimum limitation";
+            EXPECT_LE(v_test[i][j], max_value) << "v[" << i << "][" << j << "] over maximum limitation";
         }
     }
 }
