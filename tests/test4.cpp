@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <cmath>
-#include "gs.cpp" 
+#include "gs.cpp"
 
 //Long-term stability test
 //verify system behavior over multiple iterations
