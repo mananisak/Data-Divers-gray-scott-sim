@@ -1,3 +1,5 @@
+
+
 // gs.h
 #ifndef GS_H
 #define GS_H
@@ -6,8 +8,8 @@
 
 // 外部变量声明
 extern double Du, Dv, F, k, threshold;
-extern const int width;
-extern const int height;
+//extern int width;               // 移除 const 关键字
+//extern int height;              // 移除 const 关键字
 extern const double dt;
 extern const int numIterations;
 extern const int outputInterval;
