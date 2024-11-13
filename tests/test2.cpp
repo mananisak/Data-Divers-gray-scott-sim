@@ -5,6 +5,11 @@
 #include <sstream>             // 用于字符串操作
 #include <cstdio>              // 删除文件
 
+
+const int width = 256;
+const int height = 256;
+
+
 // 测试 VTK 文件的大小和内容一致性
 TEST(SimulationTest, VTKFileSizeCheck) {
     int fileIndex = 1;
