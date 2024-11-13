@@ -89,29 +89,29 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(googletest)
 
 # Create test executable file
-# add_executable(gs_test ${TEST_SOURCES})
+add_executable(gs_test ${TEST_SOURCES})
 
 # Link to Google Test Library
-# target_link_libraries(gs_test gtest gtest_main)
+target_link_libraries(gs_test gtest gtest_main)
 
 # Add Header File directory
 include_directories(${CMAKE_SOURCE_DIR})
 
 # Set the test target
 enable_testing()
-# add_test(NAME SimulationTest COMMAND gs_test)
+add_test(NAME SimulationTest COMMAND gs_test)
 
-add_executable(test1 tests/test1.cpp)
-add_executable(test2 tests/test2.cpp)
-add_executable(test3 tests/test3.cpp)
-add_executable(test4 tests/test4.cpp)
+# add_executable(test1 tests/test1.cpp)
+# add_executable(test2 tests/test2.cpp)
+# add_executable(test3 tests/test3.cpp)
+# add_executable(test4 tests/test4.cpp)
 
-target_link_libraries(test1 gtest gtest_main)
-target_link_libraries(test2 gtest gtest_main)
-target_link_libraries(test3 gtest gtest_main)
-target_link_libraries(test4 gtest gtest_main)
+# target_link_libraries(test1 gtest gtest_main)
+# target_link_libraries(test2 gtest gtest_main)
+# target_link_libraries(test3 gtest gtest_main)
+# target_link_libraries(test4 gtest gtest_main)
 
-add_test(NAME Test1 COMMAND test1)
-add_test(NAME Test2 COMMAND test2)
-add_test(NAME Test3 COMMAND test3)
-add_test(NAME Test4 COMMAND test4)
+# add_test(NAME Test1 COMMAND test1)
+# add_test(NAME Test2 COMMAND test2)
+# add_test(NAME Test3 COMMAND test3)
+# add_test(NAME Test4 COMMAND test4)
