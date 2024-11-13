@@ -39,7 +39,6 @@ jobs:
         run: |
           cd build
           ctest --output-on-failure > test_result.log
-        shell: bash
   
       - name: Upload test result
         uses: actions/upload-artifact@v3
