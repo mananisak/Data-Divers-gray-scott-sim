@@ -27,7 +27,8 @@ add_executable(gs_main ${SOURCES})
 add_custom_target(run
     COMMAND ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/gs_main
     DEPENDS gs_main
-    COMMENT "Run the simulation (after building)"
+    # COMMENT "Run the simulation (after building)"
+    COMMENT "Running the simulation..."
     WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/bin
 )
 
