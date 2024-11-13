@@ -26,10 +26,10 @@ TEST(LongTermStabilityTest, CheckStabilityOverIterations) {
     //check value
     for (int i = 0; i < width; ++i) {
         for (int j = 0; j < height; ++j) {
-            EXPECT_GE(u[i][j], min_value) << "u[" << x << "][" << y << "] under minimum limitation";
-            EXPECT_LE(u[i][j], max_value) << "u[" << x << "][" << y << "] over maximum limitation";
-            EXPECT_GE(v[i][j], min_value) << "v[" << x << "][" << y << "] under minimum limitation";
-            EXPECT_LE(v[i][j], max_value) << "v[" << x << "][" << y << "] over maximum limitation";
+            EXPECT_GE(u[i][j], min_value) << "u[" << i<< "][" << j << "] under minimum limitation";
+            EXPECT_LE(u[i][j], max_value) << "u[" << i << "][" << j << "] over maximum limitation";
+            EXPECT_GE(v[i][j], min_value) << "v[" << i << "][" << j << "] under minimum limitation";
+            EXPECT_LE(v[i][j], max_value) << "v[" << i << "][" << j << "] over maximum limitation";
         }
     }
 }
