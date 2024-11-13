@@ -88,15 +88,15 @@ enable_testing()
 # Seperate each test to test
 add_executable(test1 tests/test1.cpp)
 add_executable(test2 gs.cpp tests/test2.cpp)
-# add_executable(test3 gs.cpp tests/test3.cpp)
+add_executable(test3 gs.cpp tests/test3.cpp)
 add_executable(test4 tests/test4.cpp)
 
 target_link_libraries(test1 gtest gtest_main)
 target_link_libraries(test2 gtest gtest_main)
-# target_link_libraries(test3 gtest gtest_main)
+target_link_libraries(test3 gtest gtest_main)
 target_link_libraries(test4 gtest gtest_main)
 
 add_test(NAME Test1 COMMAND test1)
 add_test(NAME Test2 COMMAND test2)
-# add_test(NAME Test3 COMMAND test3)
+add_test(NAME Test3 COMMAND test3)
 add_test(NAME Test4 COMMAND test4)

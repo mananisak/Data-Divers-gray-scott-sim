@@ -10,7 +10,7 @@
 extern double Du, Dv, F, k, threshold;
 //extern int width;               // 移除 const 关键字
 //extern int height;              // 移除 const 关键字
-extern const double dt;
+const double dt = 0.06;               // Time step
 extern const int numIterations;
 extern const int outputInterval;
 extern std::vector<std::vector<double>> u, v;

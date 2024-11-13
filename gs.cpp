@@ -5,6 +5,7 @@
 #include <fstream>
 #include <sstream>
 #include <cmath>
+#include "gs.h"
 
 // Define simulation parameters
 const int width = 256;                // Width of the grid
@@ -14,7 +15,6 @@ double Dv = 0.07;                     // Diffusion rate of V
 double F = 0.03;                      // Feed rate
 double k = 0.0648;                    // Kill rate
 double threshold = 0.1;
-const double dt = 0.06;               // Time step
 const int numIterations = 10000;
 const int outputInterval =  100;      // Output every 1000 iterations
 
