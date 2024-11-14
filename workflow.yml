@@ -1,0 +1,27 @@
+name: C++ Test Build System and CI
+on:
+  push:
+    branches:
+      - '*'
+  pull_request:
+    branches:
+      - '*'
+jobs:
+  build:
+    runs-on: ubuntu-latest 
+    steps:
+      - uses: actions/checkout@v4  #specify environment
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y g++ cmake make libgtest-dev
+          cd /usr/src/gtest
+          sudo cmake .
+          sudo make
+          sudo cp *.a /usr/lib
+      - name: configure
+        run: ./configure
+      - name: make
+        run: make
+      - name: Compile make file
+        run: make run
