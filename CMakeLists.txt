@@ -100,3 +100,14 @@ add_test(NAME Test1 COMMAND test1)
 add_test(NAME Test2 COMMAND test2)
 add_test(NAME Test3 COMMAND test3)
 add_test(NAME Test4 COMMAND test4)
+
+# Generate a unified test output for all tests, SimulationTest（If necessary, you can release it）
+# set(TEST_SOURCES
+#     tests/test1.cpp
+#     tests/test2.cpp
+#     tests/test3.cpp
+#     tests/test4.cpp
+# )
+# add_executable(gs_test ${TEST_SOURCES})
+# target_link_libraries(gs_test gtest gtest_main)
+# add_test(NAME SimulationTest COMMAND gs_test)
